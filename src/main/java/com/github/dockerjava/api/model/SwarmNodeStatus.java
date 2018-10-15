@@ -26,6 +26,9 @@ public class SwarmNodeStatus implements Serializable {
      */
     @JsonProperty("State")
     private SwarmNodeState state;
+    
+    @JsonProperty("Addr")
+    private String ip;
 
     /**
      * @see #state
@@ -41,6 +44,11 @@ public class SwarmNodeStatus implements Serializable {
     public SwarmNodeStatus withState(SwarmNodeState state) {
         this.state = state;
         return this;
+    }
+    
+    @CheckForNull
+    public String getIp() {
+        return ip;
     }
 
     @Override
